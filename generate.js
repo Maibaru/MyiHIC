@@ -173,7 +173,9 @@ function generateHTML(item) {
             <div class="detail-row">
                 <div class="detail-label">Invoice:</div>
                 <div class="detail-value">
-                    <a href="${item['Invoice']}" class="btn btn-blue">View Invoice</a>
+                    ${item['Invoice'] && item['Invoice'].startsWith('http') ? 
+                        `<a href="${item['Invoice']}" class="btn btn-blue">View Invoice</a>` : 
+                        '<span class="na-value">Not Available</span>'}
                 </div>
             </div>
         </div>
